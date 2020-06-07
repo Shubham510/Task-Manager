@@ -47,15 +47,15 @@ app.post('/create-task', function  (req,res){
 
 app.post('/delete-task', function(req,res){
     let id = req.body.task;
-
-    Task.findByIdAndDelete(id, function(err){
-        if(err){
-            console.log('Error in deleting an object from database');
-            return;
-        }
-
-        return res.redirect('back');
-    });
+    for (let i of id){
+        Task.findByIdAndDelete(i, function(err){
+            if(err){
+                console.log('Error in deleting an object from database');
+                return;
+            }
+        });
+    }
+    return res.redirect('back');
 });
 
 app.listen(port, function(err){

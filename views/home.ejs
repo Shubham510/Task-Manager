@@ -38,7 +38,8 @@
                 <input type="checkbox" value="<%= i.id %>" name = "task">
                 <label for= "<%= i.id %>">
                     <p style=" display: inline;"><%= i.name %></p>
-                    <p style=" display: inline; background-color: aquamarine;"><%= i.category %></p><br>
+                    <p style=" display: inline; background-color: aquamarine;"><%= i.category %></p>
+                    <p> <%= i.dueDate %></p><br>
                 </label>    
             <% } %>
             <input type="submit" id="delete" hidden>
