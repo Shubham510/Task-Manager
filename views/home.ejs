@@ -1,0 +1,47 @@
+<html>
+    <head>
+        <title>
+            Task Manager
+        </title>
+
+        <script src="https://kit.fontawesome.com/37c6d4056e.js" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="/css/home.css">
+    </head>
+    <body>
+        <h1> Task Manager App</h1>
+        <form action="/create-task" method="POST">
+            <div id = "description">
+                <p> Description</p>
+                <input type="text" name = "name" placeholder="What needs to be done?" required>
+            </div>
+            <div id="category">
+                <p>Category</p>
+                <select  name="category">
+                    <optgroup label="Select Table">
+                        <option value="">Choose a category</option>
+                        <% for (let i of category) { %>
+                        <option value="<%= i %>"><%= i %></option>
+                        <% } %>
+                    </optgroup>
+                </select>
+            </div>
+            <div id="dueDate">
+                <p> Due Date</p>
+                <input type="date" name="date" placeholder="dd/mm/yyyy">
+            </div>
+            <button type="submit" style="background-color: crimson;"> <i class="fas fa-plus"></i> Add Task</button>
+            <label for="delete" style="background-color: chartreuse;"><i class="fas fa-trash-alt"></i>Delete Task</label>
+        </form>
+
+        <form action="/delete-task" method="POST">
+            <% for (let i of task) { %> 
+                <input type="checkbox" value="<%= i.id %>" name = "task">
+                <label for= "<%= i.id %>">
+                    <p style=" display: inline;"><%= i.name %></p>
+                    <p style=" display: inline; background-color: aquamarine;"><%= i.category %></p><br>
+                </label>    
+            <% } %>
+            <input type="submit" id="delete" hidden>
+        </form>
+    </body>
+</html>
