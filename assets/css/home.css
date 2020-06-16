@@ -1,0 +1,174 @@
+/* Universal */
+body{
+    background-color: gray;
+    color: lightslategrey;
+}
+
+input{
+    border: none;
+    outline: none;
+    background-color: honeydew;
+}
+
+/* Heading */
+
+h1{
+    text-align: center;
+    border-bottom: lightgray 2px solid;
+    margin-top: 10px;
+}
+
+/* Main div */
+.app-container-div{
+    background-color: honeydew;
+    margin-left: 20%;
+    width: 60%;
+    height: 100vh;
+    overflow-wrap: normal;
+}
+
+
+/* Description */
+.description{
+    border-bottom: lightgray 2px solid;
+}
+
+.description p{
+    margin-top: -5px;
+    margin-left: 15px;
+}
+
+.description input{
+    width: 100%;
+    padding: 10px 15px;
+    margin-top: -15px;
+}
+
+/* Category and Date */
+
+.cat-date-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    height: 15%;
+    border-bottom: lightgray 2px solid;
+}
+
+.cat-date-container div{
+    width: 50%;
+    
+}
+
+.cat-date-container p{
+    margin-top: 0px;
+}
+
+#category select{
+    border: none;
+    outline: none;
+    width: 100%;
+    margin-top: -5px;
+    background-color: honeydew;
+}
+
+#dueDate{
+    border-left:  lightgray 2px solid;
+}
+
+#dueDate input{
+    width: 100%;
+    outline: none;
+    border: none;
+    margin-top: -5px;
+    background-color: honeydew;
+}
+
+/* Add and Delete buttons */
+
+.buttons{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-content: center;
+    border-bottom: lightgray 2px solid;
+    height: 15%;
+}
+
+.buttons button,label{
+    height: 50%;
+    margin-top: 3%;
+    margin-left: 10px;
+    width: 15%;
+}
+
+.buttons button{
+    background-color: rgb(175, 24, 24);
+}
+
+.buttons label{
+    background-color: rgb(40, 221, 34);
+    text-align: center;
+    color: black;
+    
+}
+
+.buttons label div{
+    margin-top: 10%;
+}
+
+/* Tasks */
+
+#task-list{
+    background-color: honeydew;
+}
+
+#task-details{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    margin-top: -35px;
+    margin-left: -15%;
+}
+
+#study{
+    width: 60px;
+    height: 40px;
+    background-color: rgb(57, 31, 109);
+    color: white;
+    text-align: center;
+    margin-top: 5px;
+}
+
+#personal{
+    width: 70px;
+    height: 40px;
+    background-color: rgb(143, 18, 35);
+    color: white;
+    text-align: center;
+    margin-top: 5px;
+}
+
+#work{
+    width: 60px;
+    height: 40px;
+    background-color: rgb(31, 109, 48);
+    color: white;
+    text-align: center;
+    margin-top: 5px;
+}
+
+#others{
+    width: 60px;
+    height: 40px;
+    background-color: rgb(97, 109, 31);
+    color: white;
+    text-align: center;
+    margin-top: 5px;
+}
+
+#dueDate{
+    margin-top: 0px;
+    margin-left: 10%;
+}
+
+

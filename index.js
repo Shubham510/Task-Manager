@@ -30,6 +30,7 @@ app.get('/',function(req,res){
 });
 
 app.post('/create-task', function  (req,res){
+    //Add the task in the db
     Task.create({
         name: req.body.name,
         category: req.body.category,
@@ -37,7 +38,7 @@ app.post('/create-task', function  (req,res){
         isComplete: false
     }, function(err,newTask){
         if(err){
-            console.log('Error in creating task');
+            console.log('Error in creating task',err);
             return;
         }
 
@@ -47,6 +48,17 @@ app.post('/create-task', function  (req,res){
 
 app.post('/delete-task', function(req,res){
     let id = req.body.task;
+    //To delete single task
+    if(id.length==24){
+        Task.findByIdAndDelete(id, function(err){
+            if(err){
+                console.log('Error in deleting an object from database');
+                return;
+            }
+        });
+        return res.redirect('back');
+    }
+    //To delete multiple tasks
     for (let i of id){
         Task.findByIdAndDelete(i, function(err){
             if(err){
